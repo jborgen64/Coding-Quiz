@@ -1,35 +1,41 @@
-//Grabbing all elements in my HTML
-var start = document.getElementById("startBtn");
-var quizCtnr = document.getElementById("quiz-container");
-var choiceA = document.getElementById("choice-A");
-var choiceB = document.getElementById("choice-B");
-var choiceC = document.getElementById("choice-C");
+//build a start button on intial page
+    //needs to start timer countdown when clicked
+    //needs to display 1st question and answer options when clicked
 
-//Array holding all of the question info
-var questions = [
-    {
-        question : "What does CSS stand for?",
-        optionA : "Computer Science Stuff",
-        optionB : "Cascading Style Sheets",
-        optionC : "Cranky Silly Steve",
-        correct : "B"
-    },
-    {
-        question : "Where do you link your bootstrap CDN?",
-        optionA : "In the Body",
-        optionB : "In CSS",
-        optionC : "In the Head",
-        correct : "C"
-    }
-    {
-        question : "Is Javascript a front-end or back-end language?",
-        optionA : "front-end",
-        optionB : "back-end",
-        optionC: "both",
-        correct : "C"
-    }
-]
-//Begin quiz on start button click
-function initialize() {
-    start.style.display = "none";
-}
+//build timer
+    //needs to be displayed at 0 on start page
+    //needs to countdown from 75sec when start is pushed
+    //needs to lose 15sec when wrong answer pushed
+    //when time hits 0 quiz ends
+
+//need to display questions
+    //have empty divs and display through JS?
+    //show-hide with HTML/CSS?
+    //need to store info in an array and when answer is clicked the next question displays
+
+//display answer options
+    //three answers per question
+    //same questions on how to display as questions?
+    //when clicked need to display next question/answers
+    //if wrong answer is clicked decrease time by 15sec
+
+//high score display
+    //display locally stored high scores with start button
+    //need prompt at end to add initials if score is a high score
+
+//variables to track
+    //timer
+
+//functions
+    //startClicked()
+        //start timer
+        //display 1st question/answer
+
+    //rightClicked()
+        //display next question
+
+    //wrongClicked()
+        //decrease timer by 15sec
+        //display next question
+    
+    
