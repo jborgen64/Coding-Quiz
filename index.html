@@ -5,6 +5,7 @@
   <meta charset="utf-8">
 
   <title>Code Quiz</title>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="quizlooks.css">
@@ -13,7 +14,36 @@
 
 <body>
 
-    *//header displaying project name in a div
+    <h1>CODING QUIZ</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card" id="start">
+                <button type="button" id="startBtn" class="btn btn-outline-info btn-lg button">Start Quiz</button>
+                <div>View High Scores</div>
+            </div>
+        </div>
+
+            <div class="col-lg-8">
+                <div class="card" id="qaDisplay">
+                    <div id="question">Questions Here</div>
+                    <div id="answers">
+                        <button type="button" id="btnA" class="btn btn-outline-info btn-lg button">Large button</button>
+                        <button type="button" id="btnB" class="btn btn-outline-info btn-lg button">Large button</button>
+                        <button type="button" id="btnC" class="btn btn-outline-info btn-lg button">Large button</button>
+                    </div>
+                </div>
+            </div>
+
+        <div class="col-lg-4">
+            <div class="card">
+                <div id="timer">75</div>
+            </div>
+        </div>
+    </div>
+</div>
+
     *//start button 
     *//timer in a div 
     *//question display in an empty div (will add content with JS)

@@ -1,3 +1,31 @@
-#container {
-    border: 2px solid;
+.container {
+    width: 90% auto;
+    height: 90% auto;
+}
+
+h1 {
+    border: 1px solid;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+#question {
+    margin: 20px;
+    font-size: 20px;
+}
+
+.card {
+    padding: 20px;
+}
+
+.button {
+    margin: 20px;
+}
+
+#timer {
+    font-size: 50px;
+}
+
+#qaDisplay {
+    display: none;
 }
