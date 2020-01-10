@@ -26,6 +26,6 @@ h1 {
     font-size: 50px;
 }
 
-#qaDisplay {
+.hide {
     display: none;
 }

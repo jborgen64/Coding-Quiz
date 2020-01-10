@@ -11,7 +11,7 @@ var buttonC = document.getElementById("btnC");
 
     $("#startBtn").click(function StartQuiz() {
         $("#start").hide(1000);
-        $("#qaDisplay").show(1000);
+        $("#qaDisplay1").show(1000);
     });
 
 
@@ -23,20 +23,30 @@ var buttonC = document.getElementById("btnC");
 
 var counter = 0;
 var countDown = 75;
-
-    $("#startBtn").click(function timeGo() {
+function timeTick() {
     counter++;
+    console.log("timeout!", counter);
 
     $("#timer").html(countDown - counter);
 
-    setInterval(timeGo, 1000);
-    });
+    }
+
+var globalTimer;
+function timeStart() {
+    console.log('Time has started')
+    globalTimer = setInterval(timeTick, 1000);
+}
+
+$("#startBtn").click(timeStart);
 
 //need to display questions
     //have empty divs and display through JS?
     //in an array?
     //show-hide with HTML/CSS?
     //need to store info in an array and when answer is clicked the next question displays
+    //new plan - no for loop - html emelent for each question
+    //append each object in to the array to its respective html
+
 
 var questions = [
     {
@@ -46,34 +56,40 @@ var questions = [
         AnswerThree : "Option 3"
     },
     {
-        Question : "Here is question 1",
+        Question : "Here is question 2",
         AnswerOne : "Option 1",
         AnswerTwo : "Option 2",
         AnswerThree : "Option 3"
     },
     {
-        Question : "Here is question 1",
+        Question : "Here is question 3",
         AnswerOne : "Option 1",
         AnswerTwo : "Option 2",
         AnswerThree : "Option 3"
     },
     {
-        Question : "Here is question 1",
+        Question : "Here is question 4",
         AnswerOne : "Option 1",
         AnswerTwo : "Option 2",
         AnswerThree : "Option 3"
     },
     {
-        Question : "Here is question 1",
+        Question : "Here is question 5",
         AnswerOne : "Option 1",
         AnswerTwo : "Option 2",
         AnswerThree : "Option 3"
     }
 ];
 
-$("#startBtn").click(function FirstAppend() {
-    $("#question").append();
-});
+    function startAppend() {
+    $("#question").append(questions[0].Question);
+    $("#btnA1").append(questions[0].AnswerOne);
+    $("#btnB1").append(questions[0].AnswerTwo);
+    $("#btnC1").append(questions[0].AnswerThree);
+};
+
+$("#startBtn").click(startAppend);
+
 
 //display answer options
     //three answers per question
