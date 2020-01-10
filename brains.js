@@ -1,19 +1,87 @@
-//Element Grabbin'
-var timer = document.getElementById("timer");
-var question = document.getElementById("question");
-var buttonA = document.getElementById("btnA");
-var buttonB = document.getElementById("btnB");
-var buttonC = document.getElementById("btnC");
-
 //build a start button on intial page
     //needs to start timer countdown when clicked
     //needs to display 1st question and answer options when clicked
+
+    //show/hide as buttons are clicked to display next questions
+
+    //start button clicked - display 1st question
 
     $("#startBtn").click(function StartQuiz() {
         $("#start").hide(1000);
         $("#qaDisplay1").show(1000);
     });
 
+    //first answer option is clicked - display next question
+
+    $("#btnA1").click(function showQ2() {
+        $("#qaDisplay1").hide(1000);
+        $("#qaDisplay2").show(1000);
+    });
+
+    $("#btnB1").click(function showQ2() {
+        $("#qaDisplay1").hide(1000);
+        $("#qaDisplay2").show(1000);
+    });
+
+    $("#btnC1").click(function showQ2() {
+        $("#qaDisplay1").hide(1000);
+        $("#qaDisplay2").show(1000);
+    });
+
+    //second answer option is clicked - display next question
+
+    $("#btnA2").click(function showQ3() {
+        $("#qaDisplay2").hide(1000);
+        $("#qaDisplay3").show(1000);
+    });
+
+    $("#btnB2").click(function showQ3() {
+        $("#qaDisplay2").hide(1000);
+        $("#qaDisplay3").show(1000);
+    });
+
+    $("#btnC2").click(function showQ3() {
+        $("#qaDisplay2").hide(1000);
+        $("#qaDisplay3").show(1000);
+    });
+
+    //third answer option is clicked - display next question
+
+
+    $("#btnA3").click(function showQ4() {
+        $("#qaDisplay3").hide(1000);
+        $("#qaDisplay4").show(1000);
+    });
+
+    $("#btnB3").click(function showQ4() {
+        $("#qaDisplay3").hide(1000);
+        $("#qaDisplay4").show(1000);
+    });
+
+    $("#btnC3").click(function showQ4() {
+        $("#qaDisplay3").hide(1000);
+        $("#qaDisplay4").show(1000);
+    });
+
+    //fourth answer option is clicked - display next question
+
+
+    $("#btnA4").click(function showQ5() {
+        $("#qaDisplay4").hide(1000);
+        $("#qaDisplay5").show(1000);
+    });
+
+    $("#btnB4").click(function showQ5() {
+        $("#qaDisplay4").hide(1000);
+        $("#qaDisplay5").show(1000);
+    });
+
+    $("#btnC4").click(function showQ5() {
+        $("#qaDisplay4").hide(1000);
+        $("#qaDisplay5").show(1000);
+    });
+
+    //fifth answer option is clicked - quiz end
 
 //build timer
     //needs to be displayed at 0 on start page
@@ -48,6 +116,8 @@ $("#startBtn").click(timeStart);
     //append each object in to the array to its respective html
 
 
+//array housing questions and answers
+
 var questions = [
     {
         Question : "Here is question 1",
@@ -80,15 +150,70 @@ var questions = [
         AnswerThree : "Option 3"
     }
 ];
+//Display first question after start button is clicked
 
     function startAppend() {
-    $("#question").append(questions[0].Question);
+    $("#question1").append(questions[0].Question);
     $("#btnA1").append(questions[0].AnswerOne);
     $("#btnB1").append(questions[0].AnswerTwo);
     $("#btnC1").append(questions[0].AnswerThree);
 };
 
 $("#startBtn").click(startAppend);
+
+//append 2nd question to appropriate html elements when buttons from Q1 are clicked
+
+function AppendQtwo() {
+    $("#question2").append(questions[1].Question);
+    $("#btnA2").append(questions[1].AnswerOne);
+    $("#btnB2").append(questions[1].AnswerTwo);
+    $("#btnC2").append(questions[1].AnswerThree);
+};
+
+$("#btnA1").click(AppendQtwo);
+$("#btnB1").click(AppendQtwo);
+$("#btnC1").click(AppendQtwo);
+
+//append 3rd question to appropriate html elements when buttons from Q2 are clicked
+
+function AppendQthree() {
+    $("#question3").append(questions[2].Question);
+    $("#btnA3").append(questions[2].AnswerOne);
+    $("#btnB3").append(questions[2].AnswerTwo);
+    $("#btnC3").append(questions[2].AnswerThree);
+};
+
+$("#btnA2").click(AppendQthree);
+$("#btnB2").click(AppendQthree);
+$("#btnC2").click(AppendQthree);
+
+//append 4th question to appropriate html elements when buttons from Q3 are clicked
+
+
+function AppendQfour() {
+    $("#question4").append(questions[3].Question);
+    $("#btnA4").append(questions[3].AnswerOne);
+    $("#btnB4").append(questions[3].AnswerTwo);
+    $("#btnC4").append(questions[3].AnswerThree);
+};
+
+$("#btnA3").click(AppendQfour);
+$("#btnB3").click(AppendQfour);
+$("#btnC3").click(AppendQfour);
+
+//append 5th question to appropriate html elements when buttons from Q4 are clicked
+
+
+function AppendQfive() {
+    $("#question5").append(questions[4].Question);
+    $("#btnA5").append(questions[4].AnswerOne);
+    $("#btnB5").append(questions[4].AnswerTwo);
+    $("#btnC5").append(questions[4].AnswerThree);
+};
+
+$("#btnA4").click(AppendQfive);
+$("#btnB4").click(AppendQfive);
+$("#btnC4").click(AppendQfive);
 
 
 //display answer options
