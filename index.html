@@ -21,7 +21,7 @@
         <div class="col-lg-8">
             <div class="card" id="start">
                 <button type="button" id="startBtn" class="btn btn-outline-info btn-lg button">Start Quiz</button>
-                <div>View High Scores</div>
+                <button type="button" id="highScores" class="btn btn-outline-info btn-lg button">View Fastest Times To Finish</button>
             </div>
         </div>
 
@@ -90,21 +90,23 @@
 
         <div class="col-lg-4">
             <div class="card">
+                <div class="hide" id="urScore">Your Score:</div>
                 <div id="timer">75</div>
             </div>
         </div>
+
+        <div class="col-lg-4">
+            <div class="card hide" id="fastestTime">
+                <div>Fastest Times To Finish!</div>
+                <li id="hs1">1</li>
+                <li id="hs2">2</li>
+                <li id="hs3">3</li>
+            </div>
+        </div>
+
     </div>
 </div>
-
-    *//start button 
-    *//timer in a div 
-    *//question display in an empty div (will add content with JS)
-    *//div holding answer options (will add content with JS)
-    *//div holding high scores and that displays them
-    *//end page displaying score 
     
-
-
   <script src="brains.js"></script>
 
 </body>

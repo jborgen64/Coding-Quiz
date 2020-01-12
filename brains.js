@@ -85,23 +85,48 @@
     $("#btnA5").click(function showEnd() {
         $("#qaDisplay5").hide(1000);
         $("#end").show(1000);
+        alert("correct");
+        $("#urScore").show(1000); 
+        clearInterval(globalTimer);
+        console.log("your score is: " + (countDown - counter));
     });
 
     $("#btnB5").click(function showEnd() {
         $("#qaDisplay5").hide(1000);
         $("#end").show(1000);
+        alert("try harder");
+        $("#urScore").show(1000); 
+        clearInterval(globalTimer);
+        console.log("your score is: " + (countDown - counter));
     });
 
     $("#btnC5").click(function showEnd() {
         $("#qaDisplay5").hide(1000);
         $("#end").show(1000);
+        alert("try harder");
+        $("#urScore").show(1000); 
+        clearInterval(globalTimer);
+        console.log("your score is: " + (countDown - counter));
+    });
+
+    //show high scores when button is clicked on start page
+
+    $("#highScores").click(function highScoreClicked() {
+        $("#start").hide(1000);
+        $("#qaDisplay1").hide(1000);
+        $("#qaDisplay2").hide(1000);
+        $("#qaDisplay3").hide(1000);
+        $("#qaDisplay4").hide(1000);
+        $("#qaDisplay5").hide(1000);
+        $("#fastestTime").show(1000); 
+
     });
 
 //Timer that counts down from 75 seconds
 //*Still need to build wrong question selected function*
 
 var counter = 0;
-var countDown = 10;
+var countDown = 75;
 function timeTick() {
     counter++;
     console.log("timeout!", counter);
@@ -109,7 +134,7 @@ function timeTick() {
     $("#timer").html(countDown - counter);
 
     if (counter >= countDown) {
-        console.log("end");  
+     
         $("#start").hide(1000);
         $("#qaDisplay1").hide(1000);
         $("#qaDisplay2").hide(1000);
@@ -117,14 +142,17 @@ function timeTick() {
         $("#qaDisplay4").hide(1000);
         $("#qaDisplay5").hide(1000);
         $("#end").show(1000); 
-        
-        clearInterval(globalTimer);
 
+        $("#urScore").show(1000); 
+        
+        clearInterval(globalTimer); 
+        
     };
     };
     
 
 var globalTimer;
+
 function timeStart() {
     console.log('Time has started')
     globalTimer = setInterval(timeTick, 1000);
@@ -132,7 +160,9 @@ function timeStart() {
 
 $("#startBtn").click(timeStart);
 
-
+function wrongAnswer() {
+    counter += 15;
+};
 
 //array housing questions and answers
 
@@ -190,15 +220,17 @@ function AppendQtwo() {
 };
 
 $("#btnA1").click(function () {
-    console.log("correct");
+    alert("correct");
     AppendQtwo();
 });
 $("#btnB1").click(function () {
-    console.log("idiot!");
+    alert("gees louise!");
+    wrongAnswer();
     AppendQtwo();
 });
 $("#btnC1").click(function () {
-    console.log("idiot!");
+    alert("wrong!");
+    wrongAnswer();
     AppendQtwo();
 });
 
@@ -214,15 +246,17 @@ function AppendQthree() {
 };
 
 $("#btnA2").click(function () {
-    console.log("idiot");
+    alert("wrong");
+    wrongAnswer();
     AppendQthree();
 });
 $("#btnB2").click(function () {
-    console.log("idiot!");
+    alert("woooow!");
+    wrongAnswer();
     AppendQthree();
 });
 $("#btnC2").click(function () {
-    console.log("correct");
+    alert("correct");
     AppendQthree();
 });
 
@@ -237,15 +271,17 @@ function AppendQfour() {
 };
 
 $("#btnA3").click(function () {
-    console.log("correct");
+    alert("correct");
     AppendQfour();
 });
 $("#btnB3").click(function () {
-    console.log("idiot!");
+    alert("be smarter!");
+    wrongAnswer();
     AppendQfour();
 });
 $("#btnC3").click(function () {
-    console.log("idiot!");
+    alert("wrong!");
+    wrongAnswer();
     AppendQfour();
 });
 
@@ -260,22 +296,22 @@ function AppendQfive() {
 };
 
 $("#btnA4").click(function () {
-    console.log("idiot");
+    alert("wrong");
+    wrongAnswer();
     AppendQfive();
 });
 $("#btnB4").click(function () {
-    console.log("correct");
+    alert("correct");
     AppendQfive();
 });
 $("#btnC4").click(function () {
-    console.log("idiot!");
+    alert("try harder!");
+    wrongAnswer();
     AppendQfive();
 });
 
 //still need to:
 //high score functionality
-//end of quiz display
-//track right and wrong answers clicked
 //local storage
 
 
