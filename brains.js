@@ -81,18 +81,48 @@
 
     //*fifth answer option is clicked - quiz end*
 
+
+    $("#btnA5").click(function showEnd() {
+        $("#qaDisplay5").hide(1000);
+        $("#end").show(1000);
+    });
+
+    $("#btnB5").click(function showEnd() {
+        $("#qaDisplay5").hide(1000);
+        $("#end").show(1000);
+    });
+
+    $("#btnC5").click(function showEnd() {
+        $("#qaDisplay5").hide(1000);
+        $("#end").show(1000);
+    });
+
 //Timer that counts down from 75 seconds
 //*Still need to build wrong question selected function*
 
 var counter = 0;
-var countDown = 75;
+var countDown = 10;
 function timeTick() {
     counter++;
     console.log("timeout!", counter);
 
     $("#timer").html(countDown - counter);
 
-    }
+    if (counter >= countDown) {
+        console.log("end");  
+        $("#start").hide(1000);
+        $("#qaDisplay1").hide(1000);
+        $("#qaDisplay2").hide(1000);
+        $("#qaDisplay3").hide(1000);
+        $("#qaDisplay4").hide(1000);
+        $("#qaDisplay5").hide(1000);
+        $("#end").show(1000); 
+        
+        clearInterval(globalTimer);
+
+    };
+    };
+    
 
 var globalTimer;
 function timeStart() {
@@ -241,7 +271,6 @@ $("#btnC4").click(function () {
     console.log("idiot!");
     AppendQfive();
 });
-
 
 //still need to:
 //high score functionality
