@@ -108,34 +108,34 @@ $("#startBtn").click(timeStart);
 
 var questions = [
     {
-        Question : "Here is question 1",
-        AnswerOne : "Option 1",
-        AnswerTwo : "Option 2",
-        AnswerThree : "Option 3"
+        Question : "What does CSS stand for?",
+        AnswerOne : "Cascading Style Sheets",
+        AnswerTwo : "Crazy Science Stuff",
+        AnswerThree : "Computer Surrogate symbols"
     },
     {
-        Question : "Here is question 2",
-        AnswerOne : "Option 1",
-        AnswerTwo : "Option 2",
-        AnswerThree : "Option 3"
+        Question : "Javascript deals with:",
+        AnswerOne : "Front End",
+        AnswerTwo : "Back End",
+        AnswerThree : "Both"
     },
     {
-        Question : "Here is question 3",
-        AnswerOne : "Option 1",
-        AnswerTwo : "Option 2",
-        AnswerThree : "Option 3"
+        Question : "An h1 tag is what kind of element?",
+        AnswerOne : "HTML",
+        AnswerTwo : "JQuery",
+        AnswerThree : "Not a real thing"
     },
     {
-        Question : "Here is question 4",
-        AnswerOne : "Option 1",
-        AnswerTwo : "Option 2",
-        AnswerThree : "Option 3"
+        Question : "A period symbol refers to what syntax in HTML?",
+        AnswerOne : "HTML element",
+        AnswerTwo : "Class",
+        AnswerThree : "ID"
     },
     {
-        Question : "Here is question 5",
-        AnswerOne : "Option 1",
-        AnswerTwo : "Option 2",
-        AnswerThree : "Option 3"
+        Question : "Web development is the:",
+        AnswerOne : "Best",
+        AnswerTwo : "Worst",
+        AnswerThree : "Future"
     }
 ];
 //Display first question after start button is clicked
