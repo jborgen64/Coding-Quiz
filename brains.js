@@ -1,6 +1,4 @@
-//build a start button on intial page
-    //needs to start timer countdown when clicked
-    //needs to display 1st question and answer options when clicked
+
 
     //show/hide as buttons are clicked to display next questions
 
@@ -81,13 +79,10 @@
         $("#qaDisplay5").show(1000);
     });
 
-    //fifth answer option is clicked - quiz end
+    //*fifth answer option is clicked - quiz end*
 
-//build timer
-    //needs to be displayed at 0 on start page
-    //needs to countdown from 75sec when start is pushed
-    //needs to lose 15sec when wrong answer pushed
-    //when time hits 0 quiz ends
+//Timer that counts down from 75 seconds
+//*Still need to build wrong question selected function*
 
 var counter = 0;
 var countDown = 75;
@@ -107,13 +102,6 @@ function timeStart() {
 
 $("#startBtn").click(timeStart);
 
-//need to display questions
-    //have empty divs and display through JS?
-    //in an array?
-    //show-hide with HTML/CSS?
-    //need to store info in an array and when answer is clicked the next question displays
-    //new plan - no for loop - html emelent for each question
-    //append each object in to the array to its respective html
 
 
 //array housing questions and answers
@@ -161,6 +149,7 @@ var questions = [
 
 $("#startBtn").click(startAppend);
 
+
 //append 2nd question to appropriate html elements when buttons from Q1 are clicked
 
 function AppendQtwo() {
@@ -170,9 +159,20 @@ function AppendQtwo() {
     $("#btnC2").append(questions[1].AnswerThree);
 };
 
-$("#btnA1").click(AppendQtwo);
-$("#btnB1").click(AppendQtwo);
-$("#btnC1").click(AppendQtwo);
+$("#btnA1").click(function () {
+    console.log("correct");
+    AppendQtwo();
+});
+$("#btnB1").click(function () {
+    console.log("idiot!");
+    AppendQtwo();
+});
+$("#btnC1").click(function () {
+    console.log("idiot!");
+    AppendQtwo();
+});
+
+
 
 //append 3rd question to appropriate html elements when buttons from Q2 are clicked
 
@@ -183,9 +183,18 @@ function AppendQthree() {
     $("#btnC3").append(questions[2].AnswerThree);
 };
 
-$("#btnA2").click(AppendQthree);
-$("#btnB2").click(AppendQthree);
-$("#btnC2").click(AppendQthree);
+$("#btnA2").click(function () {
+    console.log("idiot");
+    AppendQthree();
+});
+$("#btnB2").click(function () {
+    console.log("idiot!");
+    AppendQthree();
+});
+$("#btnC2").click(function () {
+    console.log("correct");
+    AppendQthree();
+});
 
 //append 4th question to appropriate html elements when buttons from Q3 are clicked
 
@@ -197,9 +206,18 @@ function AppendQfour() {
     $("#btnC4").append(questions[3].AnswerThree);
 };
 
-$("#btnA3").click(AppendQfour);
-$("#btnB3").click(AppendQfour);
-$("#btnC3").click(AppendQfour);
+$("#btnA3").click(function () {
+    console.log("correct");
+    AppendQfour();
+});
+$("#btnB3").click(function () {
+    console.log("idiot!");
+    AppendQfour();
+});
+$("#btnC3").click(function () {
+    console.log("idiot!");
+    AppendQfour();
+});
 
 //append 5th question to appropriate html elements when buttons from Q4 are clicked
 
@@ -211,35 +229,27 @@ function AppendQfive() {
     $("#btnC5").append(questions[4].AnswerThree);
 };
 
-$("#btnA4").click(AppendQfive);
-$("#btnB4").click(AppendQfive);
-$("#btnC4").click(AppendQfive);
+$("#btnA4").click(function () {
+    console.log("idiot");
+    AppendQfive();
+});
+$("#btnB4").click(function () {
+    console.log("correct");
+    AppendQfive();
+});
+$("#btnC4").click(function () {
+    console.log("idiot!");
+    AppendQfive();
+});
 
 
-//display answer options
-    //three answers per question
-    //same questions on how to display as questions?
-    //in same array as questions?
-    //when clicked need to display next question/answers
-    //if wrong answer is clicked decrease time by 15sec
+//still need to:
+//high score functionality
+//end of quiz display
+//track right and wrong answers clicked
+//local storage
 
-//high score display
-    //display locally stored high scores with start button
-    //need prompt at end to add initials if score is a high score
 
-//variables to track
-    //timer
 
-//functions
-    //startClicked()
-        //start timer
-        //display 1st question/answer
-
-    //rightClicked()
-        //display next question
-
-    //wrongClicked()
-        //decrease timer by 15sec
-        //display next question
     
     
