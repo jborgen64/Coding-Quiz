@@ -81,6 +81,7 @@
 
     //*fifth answer option is clicked - quiz end*
 
+    
 
     $("#btnA5").click(function showEnd() {
         $("#qaDisplay5").hide(1000);
@@ -88,7 +89,8 @@
         alert("correct");
         $("#urScore").show(1000); 
         clearInterval(globalTimer);
-        console.log("your score is: " + (countDown - counter));
+        var finalScore = JSON.stringify(countDown - counter);
+       localStorage.setItem("score", finalScore);
     });
 
     $("#btnB5").click(function showEnd() {
@@ -97,17 +99,32 @@
         alert("try harder");
         $("#urScore").show(1000); 
         clearInterval(globalTimer);
-        console.log("your score is: " + (countDown - counter));
+        var finalScore = JSON.stringify(countDown - counter);
+       localStorage.setItem("score", finalScore);
     });
-
+    var  finalScore = JSON.stringify(countDown - counter);
     $("#btnC5").click(function showEnd() {
         $("#qaDisplay5").hide(1000);
         $("#end").show(1000);
         alert("try harder");
         $("#urScore").show(1000); 
         clearInterval(globalTimer);
-        console.log("your score is: " + (countDown - counter));
+        finalScore = JSON.stringify(countDown - counter);
+       localStorage.setItem("score", finalScore);
     });
+
+
+    //Ask for initials save score to local storage^^
+    
+    var userInitials = prompt("Hi! Welcome to a coding quiz. Enter your intitals!");
+    localStorage.setItem("initials", userInitials);
+
+    //display in high score div from local storage
+    var highScoreDisplay = JSON.parse(localStorage.getItem(finalScore));
+    var initialDisplay = JSON.parse(localStorage.getItem(userInitials));
+
+  
+    
 
     //show high scores when button is clicked on start page
 
@@ -119,7 +136,8 @@
         $("#qaDisplay4").hide(1000);
         $("#qaDisplay5").hide(1000);
         $("#fastestTime").show(1000); 
-
+        $("#hs1").append(initialDisplay + " : " + highScoreDisplay);
+        console.log(initialDisplay)
     });
 
 //Timer that counts down from 75 seconds
@@ -146,6 +164,8 @@ function timeTick() {
         $("#urScore").show(1000); 
         
         clearInterval(globalTimer); 
+
+        setTimeout(function() {prompt("FAIL")}, 1000);
         
     };
     };
